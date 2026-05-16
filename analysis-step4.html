@@ -262,86 +262,8 @@
 </table>
 </div>
 <div class="col-12" id="task3">
-    <h3>Task 3: Determine Risk (Semi-Quantitative and Qualitative)</h3>
-   
-    <p>
-       <b>(1) Semi-Quantitative - Risk Score Calculation </b><br><br>Once the <b>overall likelihood</b> and <b>overall impact</b> have been determined, the level of risk is calculated by combining the two.<br><br>
-       The risk score can be calculated using the formula below:
-    </p>
- <p><b>Risk Score = <span style="background-color: #ffff99; padding: 2px 5px; border-radius: 4px;">Overall Likelihood × Overall Impact</span></b></p>
-
-
-  <!-- Risk Score Calculation Section -->
-<section style="background: #f0f8ff; border: 2px solid #000080 ; border-radius: 10px; padding: 20px; margin: 30px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="color: #000080 ; font-weight: bold;">📊 Risk Score Calculator</h3>
-    <p><i>Use this calculator to determine the risk score based on overall likelihood and impact.</i></p>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-        <div>
-            <label for="likelihood"><b>Overall Likelihood:</b></label><br>
-            <input type="number" id="likelihood" placeholder="Enter Overall Likelihood" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
-        </div>
-        <div>
-            <label for="impact"><b>Overall Impact:</b></label><br>
-            <input type="number" id="impact" placeholder="Enter Overall Impact" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
-        </div>
-        <div style="align-self: flex-end;">
-            <button onclick="calculateRisk()" style="background: #000080; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
-                Calculate Risk Score
-            </button>
-        </div>
-    </div>
-
-    <p id="result" style="margin-top: 20px; font-size: 1.2em; font-weight: bold;"></p>
-</section>
-   <p>After calculating the risk score, the score should be assessed based on the following assessment scales to determine the overall risk level:</p>
-    
-        <h6>Assessment Scales – Overall Level of Risk <b><i>(Semi-Quantitative)</i></b></h6>
-                <table class="table table-bordered mx-auto" style="width:80%">
-        <thead class="table-dark">
-            <thead>
-        <tr>
-            <th>Qualitative Values</th>
-            <th colspan="2">Semi-Quantitative Values</th>
-            <th>Description</th>
-        </tr>
-        
-    </thead>
-    <tbody>
-        <tr>
-            <td>Very High</td>
-            <td>96-100</td>
-            <td>10</td>
-            <td><b>Very high risk </b>means that a threat event could be expected to have <b>multiple severe or catastrophic</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
-        </tr>
-        <tr>
-            <td>High</td>
-            <td>80-95</td>
-            <td>8</td>
-            <td><b>High risk</b> means that a threat event could be expected to have <b>severe or catastrophic</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
-        </tr>
-        <tr>
-            <td>Moderate</td>
-            <td>21-79</td>
-            <td>5</td>
-            <td><b>Moderate</b> risk means that a threat event could be expected to have<b> multiple severe or catastrophic</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
-        </tr>
-        <tr>
-            <td>Low</td>
-            <td>5-20</td>
-            <td>2</td>
-            <td><b>Low risk </b>means that a threat event could be expected to have <b>limited </b>adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
-        </tr>
-        <tr>
-            <td>Very Low</td>
-            <td>0-4</td>
-            <td>0</td>
-            <td><b>Very low</b> risk means that a threat event could be expected to have <b>negligible</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
-        </tr>
-    </tbody>
-</table>
-
-<p><b>(2) Qualitative - Risk Determination</b></p>
+    <h3>Task 3: Determine Risk (Qualitative and Semi-Quantitative)</h3>
+   <p><b>(1) Qualitative</b></p>
 <p>In qualitative risk determination, to identify the overall level of risk, the <b>qualitative levels</b> of both <i><b>overall likelihood</i></b> and <i><b>overall impact</i></b> should be analysed using the following assessment scales:</p>
 
          <h6>Assessment Scales – Level of Risk <b><i>(Qualitative)</i></b></h6>
@@ -401,6 +323,81 @@
             <td>Low</td>
         </tr>
  </table>
+    <p>
+       <b>(2) Semi-Quantitative</b><br><br>
+		<p>In Semi-quantitative approach, following the determination of <b>overall likelihood</b> and <b>overall impact</b>, the level of risk is calculated by combining the two.<br><br>
+       The risk score can be calculated using the formula below: (Note that you should use the identified <b>bin values</b> for both overall likelihood and overall impact within the formula
+    </p>
+ <p><b>Risk Score = <span style="background-color: #ffff99; padding: 2px 5px; border-radius: 4px;">Overall Likelihood × Overall Impact</span></b></p>
+
+
+  <!-- Risk Score Calculation Section -->
+<section style="background: #f0f8ff; border: 2px solid #000080 ; border-radius: 10px; padding: 20px; margin: 30px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h3 style="color: #000080 ; font-weight: bold;">📊 Risk Score Calculator</h3>
+    <p><i>Use this calculator to determine the risk score based on overall likelihood and impact.</i></p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <div>
+            <label for="likelihood"><b>Overall Likelihood:</b></label><br>
+            <input type="number" id="likelihood" placeholder="Enter Overall Likelihood" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+        <div>
+            <label for="impact"><b>Overall Impact:</b></label><br>
+            <input type="number" id="impact" placeholder="Enter Overall Impact" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+        <div style="align-self: flex-end;">
+            <button onclick="calculateRisk()" style="background: #000080; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                Calculate Risk Score
+            </button>
+        </div>
+    </div>
+
+    <p id="result" style="margin-top: 20px; font-size: 1.2em; font-weight: bold;"></p>
+</section>
+   <p>After calculating the risk score, the score should be assessed based on the following assessment scales to determine the overall risk level:</p>
+    <h6>Assessment Scales – Overall Level of Risk <b><i>(Semi-Quantitative)</i></b></h6>
+                <table class="table table-bordered mx-auto" style="width:80%">
+        <thead class="table-dark">
+            <thead>
+        <tr>
+            <th>Qualitative Values</th>
+            <th colspan="2">Semi-Quantitative Values</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Very High</td>
+            <td>96-100</td>
+            <td>10</td>
+            <td><b>Very high risk </b>means that a threat event could be expected to have <b>multiple severe or catastrophic</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
+        </tr>
+        <tr>
+            <td>High</td>
+            <td>80-95</td>
+            <td>8</td>
+            <td><b>High risk</b> means that a threat event could be expected to have <b>severe or catastrophic</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
+        </tr>
+        <tr>
+            <td>Moderate</td>
+            <td>21-79</td>
+            <td>5</td>
+            <td><b>Moderate</b> risk means that a threat event could be expected to have<b> multiple severe or catastrophic</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
+        </tr>
+        <tr>
+            <td>Low</td>
+            <td>5-20</td>
+            <td>2</td>
+            <td><b>Low risk </b>means that a threat event could be expected to have <b>limited </b>adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
+        </tr>
+        <tr>
+            <td>Very Low</td>
+            <td>0-4</td>
+            <td>0</td>
+            <td><b>Very low</b> risk means that a threat event could be expected to have <b>negligible</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
+        </tr>
+    </tbody>
+</table>     
  </div>
 
 <div class="col-12" id="example1">
@@ -523,11 +520,11 @@
 <h4><b>Task 3: Determine Risk</b></h4>
 <div class="col-12" id="task3">
 <h8><b>Risk Score calculation (Semi-Quantitative)</b></h8><br>
- <p><i>Risk Score = Overall Likelihood × Overall Impact</i></p>
+ <p><i>Risk Score = Overall Likelihood (bins) × Overall Impact (bins)</i></p>
  <p><b>Risk Score = 9.3 × 8.8 = 81.84 </b></p>
  <p>As per the Semi-Quantitative assessment scales the overall risk is <b><i>"High"</b></i></p>
 </div>
-<div class="col-12" id="task3">
+	<div class="col-12" id="task3">
  <h8><b>Risk Determination (Qualitative)</b></h8>
  <p>Overall Likelihood = <b><i>"Very High"</b></i></p>
  <p>Overall Impact = <b><i>"High"</i></b></p>
