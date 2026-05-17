@@ -325,35 +325,10 @@
  </table>
     <p>
        <b>(2) Semi-Quantitative</b><br>
-		<p>In Semi-quantitative approach, the overall level of risk is derieved as a risk score, based on the product of <b>overall likelihood</b> and <b>overall impact</b> using the below formula: (Note that within this formula the bins values should be used for both overall likelihood and overall impact)<br><br>
-    </p>
- <p><b>Risk Score = <span style="background-color: #ffff99; padding: 2px 5px; border-radius: 4px;">Overall Likelihood × Overall Impact</span></b></p>
-	
-  <!-- Risk Score Calculation Section -->
-<section style="background: #f0f8ff; border: 2px solid #000080 ; border-radius: 10px; padding: 20px; margin: 30px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="color: #000080 ; font-weight: bold;">📊 Risk Score Calculator</h3>
-    <p><i>Use this calculator to determine the risk score based on overall likelihood and impact.</i></p>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-        <div>
-            <label for="likelihood"><b>Overall Likelihood:</b></label><br>
-            <input type="number" id="likelihood" placeholder="Enter Overall Likelihood" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
-        </div>
-        <div>
-            <label for="impact"><b>Overall Impact:</b></label><br>
-            <input type="number" id="impact" placeholder="Enter Overall Impact" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
-        </div>
-        <div style="align-self: flex-end;">
-            <button onclick="calculateRisk()" style="background: #000080; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
-                Calculate Risk Score
-            </button>
-        </div>
-    </div>
-
-    <p id="result" style="margin-top: 20px; font-size: 1.2em; font-weight: bold;"></p>
-</section>
-   <p>After calculating the risk score, the score should be assessed based on the following assessment scales to determine the overall risk level:</p>
-    <h6>Assessment Scales – Overall Level of Risk <b><i>(Semi-Quantitative)</i></b></h6>
+		<p>The semi-Quantitative risk determination operates as a two stage process</p>
+		<p>In the <b>first stage</b>,the qualitative risk level identified in (1) Qualitative risk determination is checked against the semi-quantitative assessment scales
+		presented in Table below, which map each qualitative risk level to its associated score range on the 0–100 scale and corresponding bins value on the 0–10 scale. This table-lookup process identifies the score range and bins value within which the overall risk level falls, providing the numerical representation of the qualitative determination.</p>
+	<h6>Assessment Scales – Overall Level of Risk <b><i>(Semi-Quantitative)</i></b></h6>
                 <table class="table table-bordered mx-auto" style="width:80%">
         <thead class="table-dark">
             <thead>
@@ -395,8 +370,39 @@
             <td><b>Very low</b> risk means that a threat event could be expected to have <b>negligible</b> adverse effects on operations, assets, individuals, reputational harm or financial loss.</td>
         </tr>
     </tbody>
-</table>     
- </div>
+</table> 
+	<p>In the <b>second stage</b>, to aid the semi-quantitative assessment and produce an exact risk value within the identified score range, the following formula is applied using the bins values of the overall likelihood and overall impact established in Tasks 1 and 2:</p>
+		<p>In Semi-quantitative approach, the overall level of risk is derieved as a risk score, based on the product of <b>overall likelihood</b> and <b>overall impact</b> using the below formula: (Note that within this formula the bins values should be used for both overall likelihood and overall impact)<br><br>
+    </p>
+ <p><b>Risk Score = <span style="background-color: #ffff99; padding: 2px 5px; border-radius: 4px;">Overall Likelihood × Overall Impact</span></b></p>
+	
+  <!-- Risk Score Calculation Section -->
+<section style="background: #f0f8ff; border: 2px solid #000080 ; border-radius: 10px; padding: 20px; margin: 30px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h3 style="color: #000080 ; font-weight: bold;">📊 Risk Score Calculator</h3>
+    <p><i>Use this calculator to determine the risk score based on overall likelihood and impact.</i></p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <div>
+            <label for="likelihood"><b>Overall Likelihood:</b></label><br>
+            <input type="number" id="likelihood" placeholder="Enter Overall Likelihood" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+        <div>
+            <label for="impact"><b>Overall Impact:</b></label><br>
+            <input type="number" id="impact" placeholder="Enter Overall Impact" style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+        <div style="align-self: flex-end;">
+            <button onclick="calculateRisk()" style="background: #000080; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                Calculate Risk Score
+            </button>
+        </div>
+    </div>
+
+    <p id="result" style="margin-top: 20px; font-size: 1.2em; font-weight: bold;"></p>
+</section>
+   <p>This formula addresses an inherent limitation of the table-lookup process, since all threats carrying the same qualitative
+	   risk label receive the same score range and bins value regardless of the precise likelihood and impact values that produced that determination, the table-lookup alone cannot differentiate between threats within the same qualitative band. 
+	   The formula produces an exact numerical risk score that locates each threat precisely within its qualitative band, enabling meaningful comparative prioritisation of risks for risk treatment purposes.</p>
+     </div>
 
 <div class="col-12" id="example1">
   
@@ -518,7 +524,7 @@
 <h4><b>Task 3: Determine Risk</b></h4>
 
 	<div class="col-12" id="task3">
- <h8><b>Risk Determination (Qualitative)</b></h8>
+ <h8><b>Qualitative</b></h8>
  <p>Overall Likelihood = <b><i>"Very High"</b></i></p>
  <p>Overall Impact = <b><i>"High"</i></b></p>
   <p>As per the Qualitative assessment scales the overall risk is <b><i>"High"</b></i></p>
@@ -580,10 +586,13 @@
  </table>
 </div>
 	<div class="col-12" id="task3">
-<h8><b>Risk Score calculation (Semi-Quantitative)</b></h8><br>
+<h8><b>Semi-Quantitative</b></h8><br>
+<p><b>Stage 1</b></p>
+<p>The risk falls within the <b>80-95 scale</b> and <b>8 bins value</b> as per the semi-quantitative assessment scales</p>
+<p><b>Stage 2</b></p>
  <p><i>Risk Score = Overall Likelihood (bins) × Overall Impact (bins)</i></p>
  <p><b>Risk Score = 9.3 × 8.8 = 81.84 </b></p>
- <p>As per the Semi-Quantitative assessment scales the overall risk is <b><i>"High"</b></i></p>
+ <p>The exact risk score of 81.84 falls within the High score range of 80–95, confirming the qualitative determination of High and providing a precise numerical value within that band for comparative ranking purposes.</p>
 </div>
 </div>
 </div>
